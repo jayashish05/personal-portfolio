@@ -1,11 +1,8 @@
-# 🚀 Jayashish Muppur | Cyberpunk Portfolio
+# 🚀 Jayashish Muppur | Portfolio
 
 > **"System Online. Welcome to the Network."**
 
 A high-performance, immersive personal portfolio website designed with a **Neon Cyberpunk** aesthetic. Built using **Next.js 16** and **React 19**, this project fuses modern web performance with retro-futuristic visuals, featuring CRT effects, glitch animations, and a gamified user experience.
-
-![Portfolio Preview](./public/preview-preview-placeholder.png) 
-*(Note: Add a screenshot of the hero section here locally if available, or remove this line)*
 
 ## ✨ Key Features
 
