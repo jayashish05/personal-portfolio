@@ -1,0 +1,76 @@
+/* SkillTree.css */
+
+.skill-card-perspective {
+    perspective: 1200px;
+}
+
+/* Card Base Style & Pattern */
+.skill-card {
+    position: relative;
+    width: 100%;
+    /* border-radius: 10px; */
+    border: 3px solid #141414;
+    transform-style: preserve-3d;
+
+    /* User provided pattern - Adapted for Dark Theme */
+    background: linear-gradient(135deg, #0000 18.75%, rgba(255, 255, 255, 0.03) 0 31.25%, #0000 0),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) -6.25% 6.25%, #050505 0 18.75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 0;
+    background-color: #050505;
+
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 30px 30px -10px;
+    transition: background-position 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.skill-card:hover {
+    background-position: -100px 100px, -100px 100px;
+    /* Rotation is handled by JS tilt, but we can add border glow here */
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: rgba(0, 243, 255, 0.1) 0px 40px 40px -10px;
+}
+
+/* Content Box - Layout & Depth */
+.content-box {
+    /* background: rgba(20, 20, 20, 0.8); */
+    /* Keeping transparent for pattern visibility */
+    transition: all 0.5s ease-in-out;
+    padding: 25px;
+    /* Adjusted padding */
+    transform-style: preserve-3d;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title Depth Effect */
+.content-box .card-title {
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 20px);
+}
+
+.skill-card:hover .content-box .card-title {
+    transform: translate3d(0px, 0px, 50px);
+}
+
+/* Content Depth Effect */
+.content-box .card-content {
+    margin-top: 10px;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 10px);
+}
+
+.skill-card:hover .content-box .card-content {
+    transform: translate3d(0px, 0px, 30px);
+}
+
+/* Button Depth Effect */
+.content-box .see-more {
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 10px);
+}
+
+.skill-card:hover .content-box .see-more {
+    transform: translate3d(0px, 0px, 40px);
+}

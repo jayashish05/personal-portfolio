@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: var(--font-pixel);
+  --font-tech: var(--font-tech);
+
+  --color-neon-pink: #ff0099;
+  --color-neon-cyan: #00f3ff;
+  --color-neon-purple: #be00ff;
+  --color-cyber-black: #050505;
+  --color-cyber-gray: #1a1a1a;
+
+  --animate-glitch: glitch 1s linear infinite;
+  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite;
+
+  @keyframes glitch {
+
+    2%,
+    64% {
+      transform: translate(2px, 0) skew(0deg);
+    }
+
+    4%,
+    60% {
+      transform: translate(-2px, 0) skew(0deg);
+    }
+
+    62% {
+      transform: translate(0, 0) skew(5deg);
+    }
+  }
+
+  @keyframes pulseGlow {
+
+    0%,
+    100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 5px #ff0099);
+    }
+
+    50% {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 15px #ff0099);
+    }
+  }
+
+  @keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      opacity: 1;
+      text-shadow: 0 0 5px #00f3ff, 0 0 10px rgba(0, 243, 255, 0.5);
+    }
+
+    20%,
+    24%,
+    55% {
+      opacity: 0.1;
+      text-shadow: none;
+    }
+  }
+
+}
+
+.animate-flicker {
+  animation: flicker 2.5s infinite alternate;
+}
+
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-tech), sans-serif;
+  cursor: crosshair;
+  /* Gaming feel */
+}
+
+/* CRT Scanlines */
+.scanlines {
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.2));
+  background-size: 100% 4px;
+  animation: scanlineMove 10s linear infinite;
+}
+
+@keyframes scanlineMove {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cyber-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-pink);
+}
+
+/* Utility Classes for Glitch Text */
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff0099;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 #00f3ff;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(20px, 9999px, 80px, 0);
+  }
+
+  20% {
+    clip: rect(60px, 9999px, 10px, 0);
+  }
+
+  40% {
+    clip: rect(10px, 9999px, 50px, 0);
+  }
+
+  60% {
+    clip: rect(90px, 9999px, 20px, 0);
+  }
+
+  80% {
+    clip: rect(30px, 9999px, 70px, 0);
+  }
+
+  100% {
+    clip: rect(50px, 9999px, 40px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(10px, 9999px, 90px, 0);
+  }
+
+  20% {
+    clip: rect(80px, 9999px, 20px, 0);
+  }
+
+  40% {
+    clip: rect(30px, 9999px, 60px, 0);
+  }
+
+  60% {
+    clip: rect(60px, 9999px, 10px, 0);
+  }
+
+  80% {
+    clip: rect(20px, 9999px, 70px, 0);
+  }
+
+  100% {
+    clip: rect(90px, 9999px, 30px, 0);
+  }
+}

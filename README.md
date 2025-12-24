@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Jayashish Muppur | Cyberpunk Portfolio
 
-## Getting Started
+> **"System Online. Welcome to the Network."**
 
-First, run the development server:
+A high-performance, immersive personal portfolio website designed with a **Neon Cyberpunk** aesthetic. Built using **Next.js 16** and **React 19**, this project fuses modern web performance with retro-futuristic visuals, featuring CRT effects, glitch animations, and a gamified user experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Portfolio Preview](./public/preview-preview-placeholder.png) 
+*(Note: Add a screenshot of the hero section here locally if available, or remove this line)*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Key Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+*   **⚡ Cyberpunk Aesthetic**: A deeply themed UI featuring Neon Pink (`#ff0099`), Cyan (`#00f3ff`), and deep blacks. Includes custom CRT scanlines and subtle flickering effects.
+*   **🖥️ Interactive Terminal**: A functional, typing-effect terminal hero section that introduces the developer profile.
+*   **🕹️ Gamified UI**:
+    *   **Skill Tree**: Visual representation of technical proficiency.
+    *   **Power Ups**: "Core Statistics" displayed as gaming attributes.
+    *   **Character Select**: Profile section styled as a game character selection screen.
+*   **🎬 Advanced Animations**: Powered by **Framer Motion** and **GSAP** for smooth scroll reveals, hover states, and modal transitions.
+*   **🚀 Rocket Launch**: Custom-engineered "Launch Project" buttons with SVG rocket animations.
+*   **📱 Fully Responsive**: Optimized for all viewports, ensuring the cyberpunk experience persists on mobile and desktop.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+*   **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+*   **UI Library**: [React 19](https://react.dev/)
+*   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/) & [GSAP](https://greensock.com/gsap/)
+*   **Icons/Assets**: SVG & Custom CSS Shapes
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/jayashish05/personal-portfolio.git
+    cd personal-portfolio
+    ```
 
-## Deploy on Vercel
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser to enter the system.
+
+## 📂 Project Structure
+
+*   `app/`: Next.js App Router pages and layouts.
+*   `components/`: Reusable UI components (Navbar, Hero, SkillTree, etc.).
+*   `public/`: Static assets (images, Resume PDF).
+*   `styles/`: Global CSS and Tailwind configurations.
+
+## 🎨 Custom Components
+
+*   **`GlitchTitle`**: A reusable component that applies a chromatic aberration text-glitch effect on hover.
+*   **`LaunchButton`**: A specialized call-to-action button with a sliding rocket animation.
+*   **`Terminal`**: An interactive text-typing component mimicking a command-line interface.
+
+## 📜 License
+
+© 2024 Jayashish Muppur. All Rights Reserved.
+Designed & Developed by [Jayashish Muppur](https://github.com/jayashish05).
+
+---
+*End of Line.*

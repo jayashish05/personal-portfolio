@@ -1,0 +1,67 @@
+/* Projects.css */
+
+.project-cards-container {
+    display: flex;
+    flex-direction: column;
+    /* Default for mobile */
+    gap: 15px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .project-cards-container {
+        flex-direction: row;
+        /* Row for desktop */
+        justify-content: center;
+        align-items: stretch;
+    }
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    /* height: 100px; - Removing fixed height to allow content to fit */
+    min-height: 350px;
+    width: 100%;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+    background-color: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Interaction Logic */
+.project-card:hover {
+    transform: scale(1.05);
+    /* Slightly less aggressive than 1.1 for large cards */
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 
+   The Magic: When container is hovered, 
+   cards that are NOT hovered get blurred and scaled down 
+*/
+.project-cards-container:hover>.project-card:not(:hover) {
+    filter: blur(4px);
+    /* Less blur for readability */
+    transform: scale(0.95);
+    opacity: 0.6;
+}
+
+/* Content styling adaptation */
+.project-card-image {
+    background-color: #111;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s;
+}
+
+.project-card:hover .project-card-image {
+    background-color: #1a1a1a;
+}
