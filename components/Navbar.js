@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 flex justify-between items-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]">
       
@@ -59,11 +60,52 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Icon */}
-      <div className="md:hidden text-white cursor-pointer ml-4">
-        <div className="w-6 h-0.5 bg-white mb-1.5 shadow-[0_0_5px_white]" />
-        <div className="w-6 h-0.5 bg-white mb-1.5 shadow-[0_0_5px_white]" />
-        <div className="w-6 h-0.5 bg-white shadow-[0_0_5px_white]" />
+      <div 
+        className="md:hidden text-white cursor-pointer ml-4 relative z-50 p-2"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <motion.div 
+            animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }} 
+            className="w-6 h-0.5 bg-white mb-1.5 shadow-[0_0_5px_white]" 
+        />
+        <motion.div 
+            animate={isOpen ? { opacity: 0 } : { opacity: 1 }} 
+            className="w-6 h-0.5 bg-white mb-1.5 shadow-[0_0_5px_white]" 
+        />
+        <motion.div 
+            animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }} 
+            className="w-6 h-0.5 bg-white shadow-[0_0_5px_white]" 
+        />
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-20 left-0 w-full bg-[#050505]/95 backdrop-blur-3xl border-t border-b border-white/10 md:hidden flex flex-col items-center py-6 gap-6 shadow-[0_10px_30px_rgba(0,0,0,0.8)] rounded-3xl"
+        >
+            {[
+                { label: "HOME", href: "#home" },
+                { label: "PROFILE", href: "#character-select" },
+                { label: "SKILLS", href: "#skill-tree" }, 
+                { label: "PROJECTS", href: "#high-score-projects" },
+                { label: "CONTACT", href: "#contact" }
+            ].map((link, index) => (
+                <button 
+                    key={index} 
+                    onClick={() => {
+                        document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: "smooth" });
+                        setIsOpen(false);
+                    }}
+                    className="font-tech font-bold text-xl text-gray-300 hover:text-neon-pink transition-all tracking-widest uppercase"
+                >
+                    {link.label}
+                </button>
+            ))}
+        </motion.div>
+      )}
 
     </nav>
   );
